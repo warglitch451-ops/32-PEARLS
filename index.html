@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32 PEARLS® Naranpura | Luxury Multispeciality Dental Clinic & Implant Centre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #002147;
+            --gold: #C5A059;
+            --gold-light: #D4AF37;
+            --aqua: #E0F2F1;
+            --aqua-dark: #7FB3D5;
+            --white: #FFFFFF;
+            --off-white: #F8F9FA;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--navy);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gold);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--navy);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span {
+            width: 30px;
+            height: 2px;
+            background: var(--navy);
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=2070') no-repeat center center/cover;
+            padding-top: 90px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 5vw, 64px);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .floating-card {
+            position: absolute;
+            right: 10%;
+            bottom: 10%;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-hover);
+            border-left: 5px solid var(--gold);
+            z-index: 5;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-card h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .floating-card .phone {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--navy);
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            gap: 30px;
+        }
+
+        .stat-item h3 {
+            color: var(--gold);
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.8;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            padding: 120px 0;
+            background: var(--off-white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 70px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--aqua);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: var(--navy);
+            font-size: 30px;
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        /* Treatments Section */
+        .treatments {
+            padding: 120px 0;
+        }
+
+        .treatment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .treatment-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 400px;
+            cursor: pointer;
+        }
+
+        .treatment-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .treatment-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 40px 30px;
+            background: linear-gradient(transparent, rgba(0,33,71,0.95));
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .treatment-card:hover .treatment-img {
+            transform: scale(1.1);
+        }
+
+        .treatment-card:hover .treatment-overlay {
+            padding-bottom: 60px;
+        }
+
+        .treatment-overlay h3 {
+            color: var(--white);
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .treatment-overlay p {
+            font-size: 14px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .treatment-card:hover .treatment-overlay p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Implants Feature */
+        .implants-feature {
+            padding: 120px 0;
+            background: var(--navy);
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .flex-row {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .flex-row > div {
+            flex: 1;
+        }
+
+        .implants-feature h2 {
+            color: var(--white);
+            font-size: 42px;
+            margin-bottom: 30px;
+        }
+
+        .implants-feature p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .check-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .check-list i {
+            color: var(--gold);
+        }
+
+        .implant-img-box {
+            position: relative;
+        }
+
+        .implant-img-box img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 20px 20px 0 var(--gold);
+        }
+
+        /* Infrastructure */
+        .infra {
+            padding: 120px 0;
+            background: var(--off-white);
+        }
+
+        .infra-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: 20px;
+        }
+
+        .infra-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .infra-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .infra-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+        .infra-item:nth-child(2) { grid-column: span 2; }
+
+        /* Team Section */
+        .team {
+            padding: 120px 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .team-card {
+            text-align: center;
+        }
+
+        .team-img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            filter: grayscale(100%);
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-img {
+            filter: grayscale(0%);
+        }
+
+        .team-card h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .team-card span {
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        /* Contact & Location */
+        .contact-section {
+            padding: 120px 0;
+            background: var(--aqua);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .contact-info {
+            padding: 60px;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .contact-info h2 {
+            color: var(--white);
+            margin-bottom: 40px;
+        }
+
+        .info-item {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .info-item i {
+            color: var(--gold);
+            font-size: 20px;
+        }
+
+        .contact-form {
+            padding: 60px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        /* Footer */
+        footer {
+            background: #00152e;
+            color: var(--white);
+            padding: 100px 0 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .footer-about p {
+            margin: 20px 0;
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        .footer-links h4 {
+            color: var(--white);
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .feature-grid, .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .flex-row {
+                flex-direction: column;
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .mobile-toggle {
+                display: flex;
+            }
+            .hero {
+                text-align: center;
+                justify-content: center;
+            }
+            .hero-btns {
+                justify-content: center;
+            }
+            .floating-card {
+                display: none;
+            }
+            .feature-grid, .team-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .infra-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+            .infra-item:nth-child(1), .infra-item:nth-child(2) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            .contact-info, .contact-form {
+                padding: 40px 24px;
+            }
+            .section-header h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100vh;
+            background: var(--navy);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            padding: 100px 40px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            color: var(--white);
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: var(--white);
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Success Message Modal */
+        #success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .modal-content i {
+            font-size: 60px;
+            color: #28a745;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+        }
+
+    </style>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="close-menu" onclick="toggleMenu()">&times;</div>
+        <a href="#hero" onclick="toggleMenu()">Home</a>
+        <a href="#why-choose" onclick="toggleMenu()">Why Us</a>
+        <a href="#treatments" onclick="toggleMenu()">Treatments</a>
+        <a href="#team" onclick="toggleMenu()">Our Doctors</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
+        <a href="tel:+919499557474" class="btn btn-primary">Call Now</a>
+    </div>
+
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">32 PEARLS<span>®</span></a>
+                <div class="nav-links">
+                    <a href="#hero">Home</a>
+                    <a href="#why-choose">Why Us</a>
+                    <a href="#treatments">Treatments</a>
+                    <a href="#team">Doctors</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="nav-btns">
+                    <a href="#contact" class="btn btn-primary" style="padding: 12px 24px;">Book Appointment</a>
+                </div>
+                <div class="mobile-toggle" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Smile Deserves Exceptional Care.</h1>
+                <p>Experience world-class dental treatments at 32 PEARLS® Naranpura. We combine advanced technology with a compassionate approach to give you the smile you've always dreamed of.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">Book an Appointment</a>
+                    <a href="#treatments" class="btn btn-outline">Explore Treatments</a>
+                </div>
+            </div>
+        </div>
+        <div class="floating-card">
+            <h4>Naranpura Branch</h4>
+            <span class="phone">+91 94995 57474</span>
+            <p style="font-size: 13px; color: var(--text-light);">Open: Mon - Sat, 10 AM - 8 PM</p>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Years Excellence</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50k+</h3>
+                    <p>Happy Patients</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10k+</h3>
+                    <p>Implants Done</p>
+                </div>
+                <div class="stat-item">
+                    <h3>20+</h3>
+                    <p>Specialists</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose reveal" id="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose 32 PEARLS®?</h2>
+                <p>We are committed to providing the highest standard of dental care in a luxurious and comfortable environment.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-microscope"></i></div>
+                    <h3>Advanced Technology</h3>
+                    <p>Equipped with state-of-the-art digital dentistry tools, 3D imaging, and laser technology for precise results.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-user-md"></i></div>
+                    <h3>Expert Specialists</h3>
+                    <p>Our team consists of highly qualified MDS specialists across all dental disciplines under one roof.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Strict Sterilization</h3>
+                    <p>We follow international gold standards for hygiene and sterilization to ensure patient safety.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="treatments reveal" id="treatments">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Dental Specialties</h2>
+                <p>Comprehensive dental solutions tailored to your unique needs, from routine checkups to complex rehabilitations.</p>
+            </div>
+            <div class="treatment-grid">
+                <div class="treatment-card">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800" alt="Dental Implants" class="treatment-img">
+                    <div class="treatment-overlay">
+                        <h3>Dental Implants</h3>
+                        <p>Permanent, natural-looking solutions for missing teeth using premium titanium implants.</p>
+                    </div>
+                </div>
+                <div class="treatment-card">
+                    <img src="https://images.unsplash.com/photo-1593054900408-98c92f15933a?auto=format&fit=crop&q=80&w=800" alt="Smile Makeover" class="treatment-img">
+                    <div class="treatment-overlay">
+                        <h3>Smile Makeover</h3>
+                        <p>Cosmetic enhancements including veneers and whitening for a Hollywood-standard smile.</p>
+                    </div>
+                </div>
+                <div class="treatment-card">
+                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=800" alt="Aligners" class="treatment-img">
+                    <div class="treatment-overlay">
+                        <h3>Clear Aligners</h3>
+                        <p>Straighten your teeth discreetly with invisible, custom-made clear aligners.</p>
+                    </div>
+                </div>
+                <div class="treatment-card">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800" alt="Root Canal" class="treatment-img">
+                    <div class="treatment-overlay">
+                        <h3>Root Canal (RCT)</h3>
+                        <p>Painless single-visit root canal treatments using advanced rotary endodontics.</p>
+                    </div>
+                </div>
+                <div class="treatment-card">
+                    <img src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?auto=format&fit=crop&q=80&w=800" alt="Full Mouth" class="treatment-img">
+                    <div class="treatment-overlay">
+                        <h3>Full Mouth Rehab</h3>
+                        <p>Complete restoration of oral function and aesthetics for complex dental cases.</p>
+                    </div>
+                </div>
+                <div class="treatment-card">
+                    <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=800" alt="Child Care" class="treatment-img">
+                    <div class="treatment-overlay">
+                        <h3>Child Dental Care</h3>
+                        <p>Gentle and friendly pediatric dentistry for our youngest patients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="implants-feature reveal">
+        <div class="container">
+            <div class="flex-row">
+                <div class="implant-text">
+                    <h2>Advanced Dental Implants Centre</h2>
+                    <p>Restore your confidence and chewing ability with our premium dental implant solutions. We specialize in immediate loading and "All-on-4" techniques.</p>
+                    <ul class="check-list">
+                        <li><i class="fas fa-check-circle"></i> Lifetime Warranty on Premium Implants</li>
+                        <li><i class="fas fa-check-circle"></i> Computer-Guided Implant Surgery</li>
+                        <li><i class="fas fa-check-circle"></i> Minimally Invasive Procedures</li>
+                        <li><i class="fas fa-check-circle"></i> Bone Grafting & Sinus Lifts</li>
+                    </ul>
+                    <br>
+                    <a href="#contact" class="btn btn-primary">Book Consultation</a>
+                </div>
+                <div class="implant-img-box">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1000" alt="Dental Implant Consultation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="infra reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Modern Infrastructure</h2>
+                <p>A glimpse into our Naranpura facility, designed for patient comfort and clinical excellence.</p>
+            </div>
+            <div class="infra-grid">
+                <div class="infra-item"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1000" alt="Clinic Interior"></div>
+                <div class="infra-item"><img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800" alt="Treatment Room"></div>
+                <div class="infra-item"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Sterilization Area"></div>
+                <div class="infra-item"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800" alt="Reception"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team reveal" id="team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Specialists</h2>
+                <p>Led by renowned experts, our team brings decades of collective experience to your care.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800" alt="Dentist" class="team-img">
+                    <h3>Dr. Jaimin Patel</h3>
+                    <span>Implantologist & Clinical Director</span>
+                </div>
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=800" alt="Dentist" class="team-img">
+                    <h3>Dr. Reena Shah</h3>
+                    <span>Cosmetic Dentist & Endodontist</span>
+                </div>
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800" alt="Dentist" class="team-img">
+                    <h3>Dr. Ankit Mehta</h3>
+                    <span>Orthodontist (Braces & Aligners)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section reveal" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>311–312, 3rd Floor, Shanti Arcade,<br>Near Jaymangal BRTS Stop, 132' Ring Road,<br>Naranpura, Ahmedabad – 380013.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Appointment</h4>
+                            <p>+91 94995 57474</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Enquiries</h4>
+                            <p>+91 97249 13980</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Clinic Hours</h4>
+                            <p>Monday - Saturday<br>10:00 AM – 8:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="Enter your mobile number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Service Interested In</label>
+                            <select required>
+                                <option value="">Select a treatment</option>
+                                <option>Dental Implants</option>
+                                <option>Smile Makeover</option>
+                                <option>Aligners / Braces</option>
+                                <option>Root Canal Treatment</option>
+                                <option>General Consultation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message (Optional)</label>
+                            <textarea rows="4" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Request Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="success-modal">
+        <div class="modal-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>Thank You!</h3>
+            <p>Your request has been received. Our team will contact you shortly to confirm your appointment.</p>
+            <br>
+            <button onclick="closeModal()" class="btn btn-primary">Close</button>
+        </div>
+    </div>
+
+    <a href="https://wa.me/919499557474" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo" style="color: white;">32 PEARLS<span>®</span></a>
+                    <p>India's leading multispeciality dental clinic chain, providing premium dental care with a focus on patient comfort and clinical excellence.</p>
+                    <div class="social-links">
+                        <a href="#" style="margin-right: 15px;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="margin-right: 15px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="margin-right: 15px;"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#why-choose">Why Us</a></li>
+                        <li><a href="#treatments">Treatments</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Dental Implants</a></li>
+                        <li><a href="#">Smile Makeover</a></li>
+                        <li><a href="#">Clear Aligners</a></li>
+                        <li><a href="#">Laser Dentistry</a></li>
+                        <li><a href="#">Child Dentistry</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Naranpura Branch</h4>
+                    <p style="font-size: 14px; opacity: 0.7; line-height: 2;">
+                        311–312, 3rd Floor, Shanti Arcade,<br>
+                        Near Jaymangal BRTS Stop,<br>
+                        Ahmedabad – 380013.<br>
+                        Call: +91 94995 57474
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 32 PEARLS® Multispeciality Dental Clinics. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky Header Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '10px 0';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.padding = '0';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form Submission
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('success-modal').style.display = 'flex';
+            this.reset();
+        });
+
+        function closeModal() {
+            document.getElementById('success-modal').style.display = 'none';
+        }
+
+        // Smooth Scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html></html>
